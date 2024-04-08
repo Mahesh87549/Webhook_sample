@@ -36,8 +36,8 @@ app.post("/webhook",(req,res)=>{ //i want some
     let body_param=req.body;
 
     console.log(JSON.stringify(body_param,null,2));
-    console.log("boady param "+"test");
-    console.log("boady param "+msg_body);
+    console.log("body param "+"test");
+    console.log("body param "+msg_body);
 
     if(body_param.object){
         console.log("inside body param");
@@ -57,7 +57,7 @@ app.post("/webhook",(req,res)=>{ //i want some
 
                axios({
                    method:"POST",
-                   url:"https://graph.facebook.com/v13.0/"+phon_no_id+"/messages?access_token="+token,
+                   url:"https://graph.facebook.com/v18.0/"+phon_no_id+"/messages?access_token="+token,
                    data:{
                        messaging_product:"whatsapp",
                        to:from,
